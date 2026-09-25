@@ -13,8 +13,9 @@ consolidated into a single Jupyter notebook whose cells run sequentially.
 The work began as separate `.py` scripts and was later consolidated into one
 notebook with cells that run in order:
 
-0. **Setup** — install dependencies (`torch`, `torchvision`, `torchmetrics`)
-   into the running kernel via `%pip` so the notebook is self-contained.
+0. **Setup** — install dependencies (`torch`, `torchvision`, `torchmetrics`,
+   `matplotlib`) into the running kernel via `%pip` so the notebook is
+   self-contained.
 1. **Load data** — FashionMNIST via TorchVision; train/validation + test
    datasets, split 55,000 / 5,000 with seed 42.
 2. **DataLoaders** — train (shuffled, seed 42), validation, and test loaders;
@@ -33,6 +34,8 @@ notebook with cells that run in order:
 7. **Softmax + model size** — `F.softmax` on a sample's logits,
    `torch.topk(probs, 4)` for the top-4 values/indices, and the total parameter
    count via `numel()` (266,610).
+8. **Plot training accuracy** — plot the per-epoch training accuracy from the
+   `history` returned by `train()` with matplotlib.
 
 ## Repository housekeeping
 
