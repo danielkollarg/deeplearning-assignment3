@@ -63,3 +63,11 @@ added at the top of the notebook that runs `%pip install -q torch torchvision
 torchmetrics`, installing the dependencies into the running kernel so the
 notebook is self-contained. This fix was merged directly into the default
 branch.
+
+## Follow-up: plot the training accuracy
+
+A `## 8. Plot the training accuracy` section was added at the end of the
+notebook. It uses matplotlib to plot the per-epoch training accuracy from the
+`history` dict returned by `train()`, overlaying the validation accuracy for
+comparison. `matplotlib` was added to the setup `%pip install` cell (and is
+already listed in `requirements.txt`).
