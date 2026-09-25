@@ -54,3 +54,12 @@ end-to-end on the backend was out of scope.
 - The notebook was written from the prompt only, per the instruction not to
   reference the existing `image_classifier.ipynb`.
 - Work was committed and pushed to branch `claude/dreamy-mccarthy-wwgcor`.
+
+## Follow-up fix: `ModuleNotFoundError: No module named 'torchmetrics'`
+
+Running the notebook raised `ModuleNotFoundError: No module named 'torchmetrics'`
+because `torchmetrics` was not installed in the kernel. A `## 0. Setup` cell was
+added at the top of the notebook that runs `%pip install -q torch torchvision
+torchmetrics`, installing the dependencies into the running kernel so the
+notebook is self-contained. This fix was merged directly into the default
+branch.
